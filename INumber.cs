@@ -1,8 +1,9 @@
 using System;
 
-namespace english_numbers
+namespace EnglishNumbers
 {
-  public interface INumber {
-    int value();
-  }
+    public interface INumber
+    {
+        int Value { get; }
+    }
 }

@@ -1,16 +1,10 @@
-namespace english_numbers
+namespace EnglishNumbers
 {
-  public class Exponent: INumber {
-    private readonly int number;
-
-    public Exponent(int number){
-      this.number = number;
-    }
-
-    public int value()
+    public class Exponent : INumber
     {
-      return number;
-    }
-  }
+        public Exponent(int number) =>
+            this.Value = number;
 
+        public int Value { get; }
+    }
 }

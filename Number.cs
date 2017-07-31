@@ -1,16 +1,10 @@
-namespace english_numbers
+namespace EnglishNumbers
 {
   public class Number: INumber {
-    private readonly int number;
-
     public Number(int number){
-      this.number = number;
+      this.Value = number;
     }
 
-    public int value()
-    {
-      return number;
-    }
+    public int Value { get; }
   }
-
 }

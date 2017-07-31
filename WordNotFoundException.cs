@@ -1,10 +1,10 @@
 using System;
 
-namespace english_numbers
+namespace EnglishNumbers
 {
   internal class WordNotFoundException : Exception
   {
-    private string word;
+    private readonly string word;
 
     public WordNotFoundException(string word)
     {
