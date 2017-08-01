@@ -6,22 +6,10 @@ namespace EnglishNumbers
 {
     public static class Dictionaries
     {
-        public static INumber Translate(string key)
-        {
-            var number = numbers.Where(x => x.Key == key).FirstOrDefault();
-            if (number.Key != null)
-            {
-                return new Number(number.Value);
-            }
-
-            var exponent = exponents.Where(x => x.Key == key).FirstOrDefault();
-            if (exponent.Key != null)
-            {
-                return new Exponent(exponent.Value);
-            }
-
-            throw new WordNotFoundException(key);
-        }
+        public static int Translate(string key) =>
+            numbers.ContainsKey(key)
+                ? numbers[key] 
+                : throw new WordNotFoundException(key);
 
         private static Dictionary<string, int> numbers =
           new Dictionary<string, int> {
@@ -52,14 +40,10 @@ namespace EnglishNumbers
             { "seventy", 70 },
             { "eighty", 80 },
             { "ninety", 90 },
-            };
-
-        private static Dictionary<string, int> exponents =
-          new Dictionary<string, int> {
             { "hundred", 100 },
-            { "thousand", 1000 },
-            { "million", (int)1e6 },
-            { "billion", (int)1e9 }
+            { "thousand", 1_000 },
+            { "million", 1_000_000},
+            { "billion", 1_000_000_000 }
           };
-    }
+    };
 }
