@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace english_numbers
+namespace EnglishNumbers
 {
-  class Program
+  public class Program
     {
         static void Main(string[] args)
         {
@@ -10,9 +10,8 @@ namespace english_numbers
             var sentence = "Five hundred twenty-three million, seven hundred eighteen thousand and ninety-three";
             // ---------------------------
 
-            var solver = new Solver(sentence);
             try {
-                var solution = solver.run();
+                var solution = Solver.Run(sentence);
 
                 Console.WriteLine($"Input: \"{sentence}\"");
                 Console.WriteLine($"Solution: {solution.ToString("N0")}");
